@@ -24,4 +24,9 @@
             inner join categoria c on c.id = p.id_categoria
         where p.id = #{id}
     </select>
+    <!-- Los values se basan en los getters y setters -->
+    <insert id="insertProducto" parameterType="pe.edu.cibertec.dominio.Producto" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO tab_producto (nombre, descripcion, precio, imagen, id_categoria)
+        VALUES (#{nombre},#{descripcion},#{precio},#{imagen},#{categoria.id}) 
+    </insert>
 </mapper>

@@ -13,4 +13,9 @@ public class Categoria extends EntidadBase {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    
+    @Override
+    public String toString() {
+        return String.format("{ \"id\": %d, \"nombre\": \"%s\"}", getId(), getNombre());
+    }
 }

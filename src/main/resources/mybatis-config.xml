@@ -15,5 +15,6 @@
     <mappers>
         <mapper resource="pe/edu/cibertec/repositorio/mapper/UsuarioMapper.xml" />
         <mapper resource="pe/edu/cibertec/repositorio/mapper/ProductoMapper.xml" />
+        <mapper class="pe.edu.cibertec.repositorio.mapper.CategoriaMapper" />
     </mappers>
 </configuration>

@@ -11,6 +11,7 @@ public interface ProductoRepositorio {
     List<Producto> obtenerTodos();
 
     List<Producto> obtenerPorCategoria(Long idCategoria);
+    
+    Integer crear(Producto producto);
 
-    List<Producto> obtenerPorCategoriaCriteriaApi(Long idCategoria);
 }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pe.edu.cibertec.repositorio.mapper.ProductoMapper">
+    <resultMap id="Producto" type="pe.edu.cibertec.dominio.Producto">
+        <id column="id" property="id" />
+        <result column="nombre" property="nombre" />
+        <result column="descripcion" property="descripcion" />
+        <result column="precio" property="precio" />
+        <!-- image -->
+        <association property="categoria" javaType="pe.edu.cibertec.dominio.Categoria">
+            <id column="idCategoria" property="id" />
+            <result column="nombreCategoria" property="nombre" />
+        </association>
+    </resultMap>
+    
+    <select id="selectProducto" resultMap="Producto">
+        select
+            p.id, p.nombre, p.descripcion, p.precio,
+            c.id AS idCategoria,
+            c.nombre AS nombreCategoria
+        from tab_producto p
+            inner join categoria c on c.id = p.id_categoria
+        where p.id = #{id}
+    </select>
+</mapper>

@@ -8,6 +8,7 @@ package pe.edu.cibertec.repositorio.impl;
 import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import pe.edu.cibertec.dominio.Producto;
+import pe.edu.cibertec.dominio.busqueda.BusquedaProductoTop;
 import pe.edu.cibertec.repositorio.ProductoRepositorio;
 import pe.edu.cibertec.repositorio.mapper.ProductoMapper;
 
@@ -43,5 +44,14 @@ public class MybatisProductoRepositorioImpl implements ProductoRepositorio{
         
         return productoMapper.insertProducto(producto);
     }
-    
+
+    @Override
+    public List<Producto> obtenerProductosTop(BusquedaProductoTop busquedaProductoTop) {
+        if (busquedaProductoTop.getIdCategoria() != null && busquedaProductoTop.getIdCategoria() <= 0) {
+            busquedaProductoTop.setIdCategoria(null);
+        }
+        //return productoMapper.selectProductoTop(busquedaProductoTop);
+        
+        return productoMapper.procedureProductoTop(busquedaProductoTop);
+    }
 }

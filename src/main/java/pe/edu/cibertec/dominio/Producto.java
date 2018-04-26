@@ -52,4 +52,10 @@ public class Producto extends EntidadBase {
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
+    
+    @Override
+    public String toString() {
+        return String.format("{ \"id\": %d, \"nombre\": \"%s\", \"categoria\": \"%s\"}", id, nombre, categoria.getNombre());
+    }
+    
 }

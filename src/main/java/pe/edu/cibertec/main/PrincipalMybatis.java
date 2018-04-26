@@ -21,6 +21,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import pe.edu.cibertec.dominio.Categoria;
 import pe.edu.cibertec.dominio.Producto;
 import pe.edu.cibertec.dominio.Usuario;
+import pe.edu.cibertec.dominio.busqueda.BusquedaProductoTop;
 import pe.edu.cibertec.repositorio.ProductoRepositorio;
 import pe.edu.cibertec.repositorio.impl.MybatisProductoRepositorioImpl;
 import pe.edu.cibertec.repositorio.mapper.CategoriaMapper;
@@ -97,6 +98,13 @@ public class PrincipalMybatis {
 //         System.out.println("Queremos el idnice: "+nuevo.getId());
         
          System.out.println(sqlSession.getMapper(CategoriaMapper.class).obtenerTodos());
+         
+         // Consulta multiple
+        BusquedaProductoTop busquedaProductoTop = new BusquedaProductoTop();
+        busquedaProductoTop.setIdCategoria(1);
+        List<Producto> productosTop = productoRepositorio.obtenerProductosTop(busquedaProductoTop);
+        productosTop.forEach(System.out::println);
+        
          sqlSession.commit();
 
      }

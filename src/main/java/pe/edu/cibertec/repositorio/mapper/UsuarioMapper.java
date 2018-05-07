@@ -5,10 +5,12 @@
  */
 package pe.edu.cibertec.repositorio.mapper;
 
+import pe.edu.cibertec.dominio.Usuario;
+
 /**
  *
  * @author Poderosoans
  */
 public interface UsuarioMapper {
-    
+    Usuario loginUsuario(String email, String password);
 }

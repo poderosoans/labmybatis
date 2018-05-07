@@ -43,13 +43,12 @@ public class MybatisUsuarioRepositorioImpl implements UsuarioRepositorio{
     }
 
     @Override
-    public Usuario buscar(String nombre) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public Usuario login(String email, String password) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Usuario user = (Usuario) usuarioMapper.loginUsuario(email, password);
+        if( user != null) {
+            return user;
+        }
+        return null;
     }
     
 }

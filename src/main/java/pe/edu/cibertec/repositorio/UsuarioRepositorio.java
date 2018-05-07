@@ -9,6 +9,8 @@ public interface UsuarioRepositorio {
     void actualizar(Usuario usuario);
     void eliminar(Usuario usuario);
     Usuario buscar(String nombre);
+    
+    Usuario login(String email, String password);
 
     default void eliminar(Long id) {
         eliminar(buscar(id));

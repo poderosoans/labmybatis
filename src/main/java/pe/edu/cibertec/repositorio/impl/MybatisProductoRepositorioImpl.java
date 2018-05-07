@@ -39,11 +39,12 @@ public class MybatisProductoRepositorioImpl implements ProductoRepositorio{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
+    /*@Override
     public Integer crear(Producto producto) {
         
         return productoMapper.insertProducto(producto);
     }
+    */
 
     @Override
     public List<Producto> obtenerProductosTop(BusquedaProductoTop busquedaProductoTop) {
@@ -53,5 +54,20 @@ public class MybatisProductoRepositorioImpl implements ProductoRepositorio{
         //return productoMapper.selectProductoTop(busquedaProductoTop);
         
         return productoMapper.procedureProductoTop(busquedaProductoTop);
+    }
+
+    @Override
+    public void actualizar(Producto producto) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void eliminar(Producto producto) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void crear(Producto producto) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

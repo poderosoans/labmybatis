@@ -12,7 +12,16 @@ public class Producto extends EntidadBase {
     private BigDecimal precio;
     private byte[] imagen;
     private Categoria categoria;
+    private Marca marca;
 
+    public Marca getMarca() {
+        return marca;
+    }
+
+    public void setMarca(Marca marca) {
+        this.marca = marca;
+    }
+    
     public String getNombre() {
         return nombre;
     }

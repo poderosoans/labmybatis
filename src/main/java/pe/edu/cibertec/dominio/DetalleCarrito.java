@@ -6,9 +6,7 @@ import pe.edu.cibertec.dominio.base.EntidadBase;
 public class DetalleCarrito extends EntidadBase {
 
     private Carrito carritoCompras;
-
     private Producto producto;
-
     private int cantidad;
     private BigDecimal precioUnitario;
 

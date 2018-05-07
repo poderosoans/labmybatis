@@ -5,7 +5,16 @@ import pe.edu.cibertec.dominio.base.EntidadBase;
 public class Categoria extends EntidadBase {
 
     private String nombre;
+    private String imagen;
 
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+    
     public String getNombre() {
         return nombre;
     }

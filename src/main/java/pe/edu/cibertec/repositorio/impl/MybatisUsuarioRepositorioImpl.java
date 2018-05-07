@@ -5,6 +5,8 @@
  */
 package pe.edu.cibertec.repositorio.impl;
 
+import java.util.HashMap;
+import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 import pe.edu.cibertec.dominio.Usuario;
 import pe.edu.cibertec.repositorio.UsuarioRepositorio;
@@ -44,7 +46,12 @@ public class MybatisUsuarioRepositorioImpl implements UsuarioRepositorio{
 
     @Override
     public Usuario login(String email, String password) {
-        Usuario user = (Usuario) usuarioMapper.loginUsuario(email, password);
+        System.out.println("llegue al login con datos:"+ email +" "+ password );
+        Map<String, Object> parms = new HashMap<String, Object>();
+        parms.put("email", email);
+        parms.put("password", password);
+
+        Usuario user = (Usuario) usuarioMapper.loginUsuario(parms);
         if( user != null) {
             return user;
         }

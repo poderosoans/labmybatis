@@ -56,7 +56,7 @@
       delete from usuario where id = #{id}
   </delete>
   
-  <select id="loginUsuario" resultMap="Usuario">
+  <select id="loginUsuario" parameterType="map" resultMap="Usuario">
     select 
       id,
       <include refid="columnasUsuario" />

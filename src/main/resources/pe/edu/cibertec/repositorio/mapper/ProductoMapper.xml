@@ -13,6 +13,11 @@
             <id column="idCategoria" property="id" />
             <result column="nombreCategoria" property="nombre" />
         </association>
+        
+        <association property="marca" javaType="pe.edu.cibertec.dominio.Marca">
+            <id column="idMarca" property="id" />
+            <result column="nombreMarca" property="nombre" />
+        </association>
     </resultMap>
     
     <select id="selectProducto" resultMap="Producto">
@@ -57,6 +62,18 @@
     
     <select id="procedureProductoTop" resultMap="Producto" parameterType="BusquedaProductoTop">
         { call productosTop(#{cantidadMeses},#{idCategoria}) }
+    </select>
+    
+    <select id="selectProductos" resultMap="Producto">
+        select
+        p.id, p.nombre, p.descripcion, p.precio,
+        c.id AS idCategoria,
+        c.nombre AS nombreCategoria, 
+        m.id AS idMarca, 
+        m.nombre AS nombreMarca 
+        from tab_producto p
+        inner join categoria c on c.id = p.id_categoria
+        inner join marca m on m.id = p.id_marca
     </select>
     
 </mapper>

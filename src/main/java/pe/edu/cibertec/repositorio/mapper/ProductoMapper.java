@@ -17,6 +17,8 @@ public interface ProductoMapper {
   
    Producto selectProducto (Long id);
    
+   List<Producto> selectProductos ();
+   
    Integer insertProducto (Producto producto);
    
    List<Producto> selectProductoTop(BusquedaProductoTop busquedaProductoTop);

@@ -46,7 +46,7 @@ public class MybatisCategoriaRepositorioImpl implements CategoriaRepositorio{
 
     @Override
     public List<Categoria> obtenerTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return categoriaMapper.obtenerTodos();
     }
     
 }
